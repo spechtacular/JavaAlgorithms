@@ -1,0 +1,63 @@
+version: 1.0
+released: 2020-01-05
+
+
+sortNames:
+  - bubble
+  - selection
+  - shell
+  - insertion
+  - merge
+  - quick
+  - counting
+  - radix
+  - parallel
+  - isr
+  - radixstring
+
+arrayToBeSorted:
+  - 20
+  - 35
+  - -15
+  - 7
+  - 55
+  - 1
+  - -22
+
+
+radix: 26
+radixWidth: 5
+radixArrayToBeSorted: [4725, 4586, 1330, 8792, 1594, 5729]
+radixStringArrayToBeSorted: [ "bcdef", "dbaqc", "abcde", "omadd", "bbbbb"]
+
+
+countingMin: 1
+countingMax: 19
+countingArrayToBeSorted: [2,5,9,8,2,8,7,10,4,3]
+
+
+listNames:
+  - linked
+  - double
+
+stackNames:
+  - array
+  - linklist
+
+queueNames:
+  - queue
+  - queue2
+  - queue-assignment1
+
+hashTable:
+  - simpleArray
+
+binarySort:
+  - bst
+  - bst1
+
+heapNames:
+  - heap
+  - pq
+
+

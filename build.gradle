@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+group 'net.spechtacular'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.10.1'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.0'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.0'
+    runtime group: 'com.fasterxml.jackson.module', name: 'jackson-modules-java8', version: '2.9.0', ext: 'pom'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'org.jetbrains:annotations:15.0'
+}
+
+//create a single Jar with all dependencies
+jar {
+    manifest {
+        attributes 'Main-Class': 'net.spechtacular.Main'
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
